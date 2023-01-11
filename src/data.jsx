@@ -4,6 +4,8 @@ import project3 from "./assets/img/png/project-3.png";
 import project4 from "./assets/img/png/project-4.png";
 import project5 from "./assets/img/png/project-5.png";
 import project6 from "./assets/img/png/project-6.png";
+import project7 from "./assets/img/png/project-7.png";
+import project8 from "./assets/img/png/project-8.png";
 
 const projectsData = [
 	{
@@ -57,6 +59,24 @@ const projectsData = [
 		link: "https://github.com/Capstone-Project-Kelompok-6/Fe-React",
 		description:
 			"Website yang digunakan untuk mengelola data membership, workout, instructor, offline dan online class, offline dan online booking, newsletter, dan content pada sebuah gym.",
+	},
+	{
+		id: 7,
+		title: "GoDev",
+		category: "Web Application",
+		image: project7,
+		link: "https://github.com/Bimahayunugraha/react_bima-hayu-nugraha/tree/main/weekly3/project",
+		description:
+			"GoDev merupakan sebuah adalah situs web yang memungkinkan mempelajari tentang pemrograman web terutama di pengembang front end.",
+	},
+	{
+		id: 8,
+		title: "Todo App",
+		category: "Web Application",
+		image: project8,
+		link: "https://github.com/Bimahayunugraha/react_bima-hayu-nugraha/tree/main/17_Global%20State%20Management%20and%20Data%20Fetching/praktikum/data-fetching",
+		description:
+			"Todo App merupakan sebuah website yang digunakan untuk mengelola todo yang dilakukan.",
 	},
 ];
 

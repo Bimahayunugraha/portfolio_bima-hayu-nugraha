@@ -1,15 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import ProjectItem from "./ProjectItem";
 
 const ProjectOverview = () => {
-	const [currentPage] = useState(1);
-	const [dataPerPage] = useState(6);
-
 	const projectsData = useSelector((state) => state.project);
-	const indexOfLastData = currentPage * dataPerPage;
-	const indexOfFirstData = indexOfLastData - dataPerPage;
-	const currentData = projectsData.slice(indexOfFirstData, indexOfLastData);
 
 	return (
 		<div className="bg-slate-100 pt-36 pb-16">
@@ -22,7 +16,7 @@ const ProjectOverview = () => {
 						</p>
 					</div>
 					<div className="mb-6 grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6 xl:grid-cols-3 2xl:grid-cols-4">
-						{currentData?.map((item) => {
+						{projectsData?.map((item) => {
 							return <ProjectItem key={item.id} data={item} />;
 						})}
 					</div>
