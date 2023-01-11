@@ -1,4 +1,3 @@
-import project1 from "./assets/img/png/project-1.png";
 import project2 from "./assets/img/png/project-2.png";
 import project3 from "./assets/img/png/project-3.png";
 import project4 from "./assets/img/png/project-4.png";
@@ -10,15 +9,6 @@ import project8 from "./assets/img/png/project-8.png";
 const projectsData = [
 	{
 		id: 1,
-		title: "YuNotes",
-		category: "Android Application",
-		image: project1,
-		link: "https://github.com/Bimahayunugraha/YuNotes",
-		description:
-			"YuNotes adalah aplikasi android yang digunakan untuk mencatat seperti catatan tugas ataupun lainnya.",
-	},
-	{
-		id: 2,
 		title: "Data Karyawan PT Sawit Bahagia",
 		category: "Web Application",
 		image: project2,
@@ -26,7 +16,7 @@ const projectsData = [
 		description: "Website yang digunakan untuk mengelola data karyawan",
 	},
 	{
-		id: 3,
+		id: 2,
 		title: "Survey Pelanggan",
 		category: "Web Application",
 		image: project3,
@@ -35,7 +25,7 @@ const projectsData = [
 			"Website yang digunakan untuk menampilkan hasil olahan data survey pelanggan LifeMedia.",
 	},
 	{
-		id: 4,
+		id: 3,
 		title: "PonPin",
 		category: "Web Application",
 		image: project4,
@@ -44,7 +34,7 @@ const projectsData = [
 			"Website yang digunakan untuk melakukan penilaian terhadap kinerja dari pak RT dalam menyediakan fasilitas.",
 	},
 	{
-		id: 5,
+		id: 4,
 		title: "eRekap",
 		category: "Web Application",
 		image: project5,
@@ -52,7 +42,7 @@ const projectsData = [
 		description: "Website yang digunakan untuk melakukan rekap nilai siswa.",
 	},
 	{
-		id: 6,
+		id: 5,
 		title: "Workfit",
 		category: "Web Application",
 		image: project6,
@@ -61,7 +51,7 @@ const projectsData = [
 			"Website yang digunakan untuk mengelola data membership, workout, instructor, offline dan online class, offline dan online booking, newsletter, dan content pada sebuah gym.",
 	},
 	{
-		id: 7,
+		id: 6,
 		title: "GoDev",
 		category: "Web Application",
 		image: project7,
@@ -70,7 +60,7 @@ const projectsData = [
 			"GoDev merupakan sebuah adalah situs web yang memungkinkan mempelajari tentang pemrograman web terutama di pengembang front end.",
 	},
 	{
-		id: 8,
+		id: 7,
 		title: "Todo App",
 		category: "Web Application",
 		image: project8,
