@@ -5,7 +5,7 @@ import ProjectOverview from "../components/ProjectOverview";
 import Navbar from "../components/Navbar";
 import ToTop from "../components/ToTop";
 import Footer from "../components/Footer";
-import MobileNavbar from "../components/mobileNavbar";
+import MobileNavbar from "../components/MobileNavbar";
 
 const HomePage = () => {
   return (
