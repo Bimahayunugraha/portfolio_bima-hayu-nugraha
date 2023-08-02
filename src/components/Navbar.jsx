@@ -1,91 +1,83 @@
 import React, { useEffect, useState } from "react";
 import icon from "../assets/img/svg/logo.svg";
-import { navbarCollections } from "../mocks/navbarCollection";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
-	const [navbarToggle, setNavbarToggle] = useState(false);
-	const [scroll, setScroll] = useState(false);
+  const [scroll, setScroll] = useState(false);
 
-	const handleToggle = () => {
-		setNavbarToggle(!navbarToggle);
-	};
+  useEffect(() => {
+    window.addEventListener("scroll", stickyNavbar);
 
-	useEffect(() => {
-		window.addEventListener("scroll", () => {
-			if (window.scrollY > 100) {
-				setScroll(true);
-			} else {
-				setScroll(false);
-			}
-		});
-	});
-	return (
-		<>
-			<header
-				className={
-					scroll
-						? "nav-container active absolute top-0 left-0 z-10 flex w-full items-center bg-transparent transition-all duration-300"
-						: "fixed top-0 left-0 z-10 flex w-full items-center bg-transparent transition-all duration-300"
-				}>
-				<div className="container">
-					<div className="relative flex items-center justify-between">
-						<div className="px-4">
-							<a
-								href="#home"
-								className="nav-brand flex flex-wrap items-center py-6 text-xl font-bold tracking-tight text-gray-700 lg:ml-0">
-								<img src={icon} className="mr-3 h-10 w-10" alt="Logo" />
-								Portfolio
-							</a>
-						</div>
-						<div className="flex items-center px-4">
-							<button
-								id="hamburger"
-								name="hamburger"
-								type="button"
-								className="absolute right-4 block text-white lg:hidden"
-								onClick={handleToggle}>
-								<i
-									className={
-										navbarToggle
-											? "hidden"
-											: "far fa-bars block text-xl text-gray-800 transition duration-300 ease-in-out"
-									}></i>
-								<i
-									className={
-										navbarToggle
-											? "far fa-times block text-xl text-gray-800 transition duration-300 ease-in-out"
-											: "hidden"
-									}></i>
-							</button>
-						</div>
-						<div className="flex items-center">
-							<nav
-								className={
-									navbarToggle
-										? "absolute right-4 top-full w-full max-w-[250px] rounded-lg bg-white py-5 shadow-xl transition duration-300 ease-in-out lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none"
-										: "absolute right-4 top-full hidden w-full max-w-[250px] rounded-lg bg-white py-5 shadow-lg transition duration-300 lg:static lg:block lg:max-w-full lg:rounded-none lg:bg-transparent lg:shadow-none"
-								}>
-								<ul className="block lg:flex">
-									{navbarCollections.map((item, index) => {
-										return (
-											<li className="group" key={index}>
-												<a
-													href={item.path}
-													className="nav-links mx-8 flex py-2 text-base font-semibold text-gray-800 group-hover:text-primary"
-													onClick={handleToggle}>
-													{item.name}
-												</a>
-											</li>
-										);
-									})}
-								</ul>
-							</nav>
-						</div>
-					</div>
-				</div>
-			</header>
-		</>
-	);
+    return () => window.removeEventListener("scroll", stickyNavbar);
+  });
+
+  const stickyNavbar = () => {
+    if (window.scrollY > 50) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  return (
+    <>
+      <nav
+        className={
+          scroll
+            ? "nav-container active absolute top-0 left-0 right-0 z-20 w-full border-b border-gray-200 px-0 py-2.5 sm:px-4 md:px-2"
+            : "gradient-1 fixed top-0 left-0 z-20 w-full bg-white px-0 py-2.5 sm:px-4 md:px-2"
+        }>
+        <div className="container mx-auto">
+          <div className="relative flex flex-wrap items-center justify-between">
+            <Link to="home" className="flex cursor-pointer items-center">
+              <img src={icon} className="mr-3 h-6 sm:h-6" alt="Logo" />
+              <span className="self-center whitespace-nowrap text-lg font-semibold md:text-xl">
+                Portfolio
+              </span>
+            </Link>
+            <div className="flex md:order-2">
+              <div>
+                <Link
+                  activeClass="active-link"
+                  spy
+                  smooth
+                  offset={50}
+                  duration={500}
+                  to="home"
+                  className="mx-8 hidden cursor-pointer rounded-lg px-2 py-2.5 text-center text-sm font-semibold text-neutral-80 transition-all duration-150 ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary lg:flex">
+                  Home
+                </Link>
+              </div>
+              <div>
+                <Link
+                  activeClass="active-link"
+                  spy
+                  smooth
+                  offset={50}
+                  duration={500}
+                  to="tentang"
+                  className="mx-8 hidden cursor-pointer rounded-lg px-2 py-2.5 text-center text-sm font-semibold text-neutral-80 transition-all duration-150 ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary lg:flex">
+                  Tentang Saya
+                </Link>
+              </div>
+              <div>
+                <Link
+                  activeClass="active-link"
+                  spy
+                  smooth
+                  offset={50}
+                  duration={500}
+                  to="project"
+                  className="mx-8 hidden cursor-pointer rounded-lg px-2 py-2.5 text-center text-sm font-semibold text-neutral-80 transition-all duration-150 ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:hover:text-primary lg:flex">
+                  Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </>
+  );
 };
 
 export default Navbar;
