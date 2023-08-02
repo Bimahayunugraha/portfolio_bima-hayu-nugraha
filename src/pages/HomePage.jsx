@@ -5,26 +5,28 @@ import ProjectOverview from "../components/ProjectOverview";
 import Navbar from "../components/Navbar";
 import ToTop from "../components/ToTop";
 import Footer from "../components/Footer";
+import MobileNavbar from "../components/mobileNavbar";
 
 const HomePage = () => {
-	return (
-		<>
-			<Navbar />
-			<main>
-				<section id="home">
-					<Hero />
-				</section>
-				<section id="tentang">
-					<About />
-				</section>
-				<section id="project">
-					<ProjectOverview />
-				</section>
-			</main>
-			<ToTop />
-			<Footer />
-		</>
-	);
+  return (
+    <>
+      <Navbar />
+      <MobileNavbar />
+      <main>
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="tentang">
+          <About />
+        </section>
+        <section id="project">
+          <ProjectOverview />
+        </section>
+      </main>
+      <ToTop />
+      <Footer />
+    </>
+  );
 };
 
 export default HomePage;
